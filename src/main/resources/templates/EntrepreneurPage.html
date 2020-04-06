@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创业者申请界面</title>
+</head>
+<body>
+    <h1>创业者申请</h1>
+    <input type="text" id="text_userAccount" placeholder="输入申请人账户">
+    <button value="" onclick="startProcess()" id="btn_startProcess">启动申请审批流程</button>
+    <br>
+    <div id="applyInfo">
+    <label >填写申请主体</label>
+    <select id="applyType">
+        <option value="0">个人</option>
+        <option value="1">公司</option>
+    </select>
+    <button value="" onclick="confirm()" id="btn_confirm">确定</button>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script type="application/javascript">
+    $("#applyInfo").hide();
+    
+    
+    function startProcess() {
+        $.ajax({
+            url:"/Entrepreneur/startProcess",
+            data:"userAccount="+$("#text_userAccount").val(),
+            type:"POST",
+            success:function (result) {
+                if (result.code===100)
+                {
+                    alert("流程启动成功。请填写申请主体");
+                    $("#applyInfo").show();
+                    $("#btn_startProcess").hide();
+                }else {
+                    alert("流程启动失败");
+                }
+
+            }
+        });
+    }
+    
+    function confirm() {
+        $.ajax({
+           url:"/Entrepreneur/completeTask",
+           type:"POST",
+           data:"applicantType="+$("#applyType").val()+"&userAccount="+$("#text_userAccount").val(),
+           success:function (result) {
+                if (result.code===100){
+                    alert("申请成功");
+                }
+           }
+        });
+    }
+</script>
+</html>

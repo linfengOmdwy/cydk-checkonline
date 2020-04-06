@@ -1,0 +1,8 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url:  jdbc:mysql://localhost:3306/activitistudy?setUnicode=true&characterEncoding=utf8
+    username: root
+    password: ilovemcf
+    driver-class-name: com.mysql.jdbc.Driver
