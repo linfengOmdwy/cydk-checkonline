@@ -12,5 +12,7 @@ public class MVCConfig implements WebMvcConfigurer {
         registry.addViewController("/EntrepreneurPage").setViewName("EntrepreneurPage");
         //金融机构审批页面
         registry.addViewController("/bankPage").setViewName("BankPage");
+        //区就业审批页面
+        registry.addViewController("/districtJiuYePage").setViewName("districtJiuYePage");
     }
 }

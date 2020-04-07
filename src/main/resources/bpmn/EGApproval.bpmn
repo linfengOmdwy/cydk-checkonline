@@ -19,7 +19,7 @@
     <sequenceFlow id="flow6" sourceRef="bankCheck" targetRef="parallelgateway2"></sequenceFlow>
     <exclusiveGateway id="exclusivegateway1" name="Exclusive Gateway"></exclusiveGateway>
     <sequenceFlow id="flow7" sourceRef="parallelgateway2" targetRef="exclusivegateway1"></sequenceFlow>
-    <userTask id="bankInvestigation" name="【金融机构】实地考察" activiti:assignee="${bank}"></userTask>
+    <userTask id="bankInvestigation" name="【金融机构】实地考察" activiti:assignee="bank"></userTask>
     <userTask id="financeInvestigation" name="【市级财政】实地考察" activiti:assignee="finance"></userTask>
     <inclusiveGateway id="inclusivegateway1" name="Inclusive Gateway"></inclusiveGateway>
     <sequenceFlow id="flow8" name="全部通过" sourceRef="exclusivegateway1" targetRef="inclusivegateway1">
@@ -121,14 +121,14 @@
         <omgdi:waypoint x="620.0" y="257.0"></omgdi:waypoint>
         <omgdi:waypoint x="680.0" y="257.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="609.0" y="237.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="48.0" x="609.0" y="237.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
         <omgdi:waypoint x="600.0" y="277.0"></omgdi:waypoint>
         <omgdi:waypoint x="600.0" y="360.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="540.0" y="319.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="60.0" x="540.0" y="319.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow13" id="BPMNEdge_flow13">
@@ -169,7 +169,7 @@
         <omgdi:waypoint x="700.0" y="347.0"></omgdi:waypoint>
         <omgdi:waypoint x="829.0" y="347.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="720.0" y="324.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="84.0" x="720.0" y="324.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow21" id="BPMNEdge_flow21">
